@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Canis Nittedal — en enkel og varm nettside for hundetrening, fellesskap og aktiviteter."
+    />
+    <title>Canis Nittedal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="Canis Nittedal hjem">
+        <span class="logo-mark">🐾</span>
+        <span>Canis Nittedal</span>
+      </a>
+      <nav aria-label="Hovedmeny">
+        <a href="#om">Om</a>
+        <a href="#tilbud">Tilbud</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Hundetrening • fellesskap • mestring</p>
+          <h1>Et trygt sted for hund og eier i Nittedal.</h1>
+          <p class="lead">
+            Vi hjelper deg å bygge et bedre samarbeid med hunden din gjennom
+            positiv trening, praktiske øvelser og hyggelige møteplasser.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#kontakt">Ta kontakt</a>
+            <a class="button secondary" href="#tilbud">Se tilbud</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Dekorativ hundekort">
+          <div class="paw">🐶</div>
+          <p>Små steg. Mer trygghet. Bedre hverdager.</p>
+        </div>
+      </section>
+
+      <section id="om" class="section split">
+        <div>
+          <p class="eyebrow">Om oss</p>
+          <h2>Varm, praktisk og positiv trening.</h2>
+        </div>
+        <p>
+          Canis Nittedal er laget for deg som vil forstå hunden din bedre og få
+          en enklere, roligere og morsommere hverdag sammen. Denne nettsiden er
+          en enkel første versjon og kan bygges videre med kurs, bilder,
+          påmelding og nyheter.
+        </p>
+      </section>
+
+      <section id="tilbud" class="section">
+        <p class="eyebrow">Tilbud</p>
+        <h2>Hva nettsiden kan vise</h2>
+        <div class="cards">
+          <article>
+            <h3>Kurs</h3>
+            <p>Valpekurs, hverdagslydighet, innkalling og praktisk trening.</p>
+          </article>
+          <article>
+            <h3>Aktiviteter</h3>
+            <p>Fellestrening, turgrupper og sosiale treff for hundeeiere.</p>
+          </article>
+          <article>
+            <h3>Ressurser</h3>
+            <p>Tips, øvelser og enkle guider for bedre samarbeid hjemme.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="kontakt" class="section contact">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Klar for å gjøre siden ekte?</h2>
+        <p>
+          Bytt ut teksten med riktig e-post, telefon, adresse og åpningstider.
+        </p>
+        <a class="button primary" href="mailto:hei@example.com">hei@example.com</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Canis Nittedal. Alle rettigheter reservert.</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
