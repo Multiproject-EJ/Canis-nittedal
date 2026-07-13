@@ -125,7 +125,11 @@
                 target="_blank"
                 rel="noreferrer"
               >
-                Se alle Nittedal-kurs <span aria-hidden="true">↗</span>
+                <span class="live-course-copy">
+                  <strong>Se alle Nittedal-kurs</strong>
+                  <span class="live-course-date">Se kursoversikten hos Canis</span>
+                </span>
+                <span aria-hidden="true">↗</span>
               </a>
             </li>
           </ul>
@@ -367,22 +371,29 @@
           .then((csv) => {
             const courses = parseCsv(csv)
               .slice(1)
-              .filter(([name, url]) => name && validCourseUrl(url));
+              .filter(([name, , url]) => name && validCourseUrl(url));
 
             if (!courses.length) throw new Error("Kurslisten er tom.");
 
             courseList.replaceChildren(
-              ...courses.map(([name, url]) => {
+              ...courses.map(([name, date, url]) => {
                 const item = document.createElement("li");
                 const link = document.createElement("a");
+                const copy = document.createElement("span");
+                const title = document.createElement("strong");
+                const courseDate = document.createElement("span");
                 const arrow = document.createElement("span");
                 link.href = url;
                 link.target = "_blank";
                 link.rel = "noreferrer";
-                link.append(document.createTextNode(`${name} `));
+                copy.className = "live-course-copy";
+                title.textContent = name;
+                courseDate.className = "live-course-date";
+                courseDate.textContent = date || "Dato kommer";
+                copy.append(title, courseDate);
                 arrow.setAttribute("aria-hidden", "true");
                 arrow.textContent = "↗";
-                link.append(arrow);
+                link.append(copy, arrow);
                 item.append(link);
                 return item;
               }),
