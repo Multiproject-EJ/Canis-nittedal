@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Canis Hundeskole avd. Nittedal tilbyr belønningsbasert hundetrening, kurs og individuell veiledning med Lena Syversen og Trude Josefsen."
+      content="Trygg og belønningsbasert hundetrening i Nittedal. Finn kurs og personlig veiledning med Lena Syversen og Trude Josefsen."
     />
     <meta name="theme-color" content="#173f69" />
     <meta property="og:title" content="Canis Nittedal | Hundetrening med mening" />
     <meta
       property="og:description"
-      content="Belønningsbaserte kurs, søksarbeid og individuell veiledning for hund og eier."
+      content="Praktiske kurs og personlig veiledning som gjør hverdagen enklere for hund og eier."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://canis-nittedal.no/" />
@@ -36,7 +36,7 @@
         </nav>
         <a
           class="header-cta"
-          href="https://canishundeskole.no/kurs"
+          href="https://canishundeskole.no/kurs?avdeling=Nittedal"
           target="_blank"
           rel="noreferrer"
         >
@@ -48,20 +48,24 @@
 
     <main id="hovedinnhold">
       <section id="topp" class="hero">
-        <div class="hero-image" role="img" aria-label="Border collie i skogen"></div>
+        <div class="hero-images" role="img" aria-label="Hunder i trening og aktivitet">
+          <div class="hero-image hero-image-one is-active" data-hero-slide></div>
+          <div class="hero-image hero-image-two" data-hero-slide></div>
+          <div class="hero-image hero-image-three" data-hero-slide></div>
+        </div>
         <div class="hero-shade"></div>
         <div class="hero-inner">
           <p class="eyebrow light">Canis Hundeskole avd. Nittedal</p>
-          <h1>Hundetrening med plass til hele ekvipasjen.</h1>
+          <h1>Tryggere hverdag. Bedre samarbeid.</h1>
           <p class="hero-copy">
-            Belønningsbasert og praktisk trening for valp, familiehund og hunder
-            som elsker å bruke nesa. Vi bygger ferdigheter i trygge,
-            forståelige steg — sammen.
+            Praktiske kurs for valper, familiehunder og hunder som elsker å
+            bruke nesa. Du får tydelige øvelser som fungerer i hverdagen — og
+            støtte hele veien.
           </p>
           <div class="button-row">
             <a
               class="button button-primary"
-              href="https://canishundeskole.no/kurs"
+              href="https://canishundeskole.no/kurs?avdeling=Nittedal"
               target="_blank"
               rel="noreferrer"
             >
@@ -70,11 +74,37 @@
             </a>
             <a class="button button-ghost" href="#instruktorer">Møt instruktørene</a>
           </div>
+          <div class="hero-controls" aria-label="Bildevisning">
+            <button
+              class="hero-dot is-active"
+              type="button"
+              data-slide-index="0"
+              aria-label="Vis bilde 1"
+              aria-pressed="true"
+            ></button>
+            <button
+              class="hero-dot"
+              type="button"
+              data-slide-index="1"
+              aria-label="Vis bilde 2"
+              aria-pressed="false"
+            ></button>
+            <button
+              class="hero-dot"
+              type="button"
+              data-slide-index="2"
+              aria-label="Vis bilde 3"
+              aria-pressed="false"
+            ></button>
+            <button class="hero-pause" type="button" aria-pressed="false">
+              Pause bildevisning
+            </button>
+          </div>
         </div>
         <div class="hero-facts" aria-label="Kort om treningstilbudet">
-          <span>Belønningsbasert</span>
-          <span>Individuelt tilpasset</span>
-          <span>Kurs for alle nivåer</span>
+          <span>Trening med belønning</span>
+          <span>Tilpasset dere</span>
+          <span>For alle nivåer</span>
         </div>
       </section>
 
@@ -82,11 +112,11 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Kurstilbud</p>
-            <h2>Fra de første stegene til fordypning.</h2>
+            <h2>Finn kurset som passer dere.</h2>
           </div>
           <p>
-            Vi har et variert tilbud og kan tilpasse kurs for rasegrupper,
-            hundeklubber, enkeltpersoner og andre grupper.
+            Enten dere trenger en god start, mer ro i hverdagen eller nye
+            utfordringer, finner vi et opplegg som passer.
           </p>
         </div>
 
@@ -113,7 +143,7 @@
             <div class="course-card-shade"></div>
             <div class="course-card-content">
               <p class="card-number">03</p>
-              <h3>Videre utvikling</h3>
+              <h3>For viderekomne</h3>
               <p>Rallylydighet, brukslydighet, konkurranselydighet og klikkertrening.</p>
             </div>
           </article>
@@ -122,60 +152,64 @@
             <p class="card-number">04</p>
             <h3>Individuell veiledning</h3>
             <p>
-              Privattimer, atferdskonsultasjoner og opplegg tilpasset deg og
-              hunden din.
+              Privattimer og hjelp med utfordringer i hverdagen, tilpasset deg
+              og hunden din.
             </p>
             <a href="#kontakt">Ta kontakt <span aria-hidden="true">→</span></a>
           </article>
         </div>
 
-        <div class="course-link-panel">
+        <div class="course-link-panel live-course-panel">
           <div>
-            <p class="eyebrow">Aktuelle datoer og ledige plasser</p>
-            <h3>Påmelding skjer hos Canis Hundeskole.</h3>
+            <p class="eyebrow">Aktuelle kurs</p>
+            <h3>Kurs dere kan melde dere på nå.</h3>
+            <p id="course-feed-status" class="course-link-note" aria-live="polite">
+              Oppdateres automatisk fra kurslisten.
+            </p>
           </div>
-          <a
-            class="button button-dark"
-            href="https://canishundeskole.no/kurs"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Se alle Nittedal-kurs
-            <span aria-hidden="true">↗</span>
-          </a>
+          <ul id="live-course-list" class="live-course-list">
+            <li>
+              <a
+                href="https://canishundeskole.no/kurs?avdeling=Nittedal"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Se alle Nittedal-kurs <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
       <section id="trening" class="section training-section">
         <div class="training-copy">
           <p class="eyebrow light">Slik trener vi</p>
-          <h2>Mestring før prestasjon.</h2>
+          <h2>Trygg trening hunden forstår.</h2>
           <p>
-            Vi bruker belønningsbaserte prinsipper, læringsteori og
-            atferdsanalyse. Målet er trening som hunden forstår og som du kan ta
-            med videre i hverdagen.
+            Vi lærer hunden med belønning og tydelige, små steg. Det gjør
+            treningen trygg, motiverende og enkel å bruke i hverdagen.
           </p>
         </div>
         <div class="principles">
           <article>
             <span aria-hidden="true">01</span>
             <div>
-              <h3>Tilpasset individet</h3>
-              <p>Vi møter hund og eier der de er og finner en realistisk vei videre.</p>
+              <h3>Tilpasset dere</h3>
+              <p>Vi tar utgangspunkt i hunden, målene deres og det som fungerer hjemme.</p>
             </div>
           </article>
           <article>
             <span aria-hidden="true">02</span>
             <div>
-              <h3>Forståelse i små steg</h3>
-              <p>Tydelige kriterier gjør læringen tryggere og mer effektiv.</p>
+              <h3>Små, tydelige steg</h3>
+              <p>Én ting om gangen gjør det lettere for hunden å lykkes.</p>
             </div>
           </article>
           <article>
             <span aria-hidden="true">03</span>
             <div>
               <h3>Glede og samarbeid</h3>
-              <p>Gode belønninger og gode opplevelser bygger en sterk relasjon.</p>
+              <p>Gode belønninger og gode opplevelser bygger tillit mellom dere.</p>
             </div>
           </article>
         </div>
@@ -200,8 +234,8 @@
               <p class="instructor-role">Atferdskonsulent · Hundeinstruktør</p>
               <h3>Lena Syversen</h3>
               <p>
-                Lena arbeider med atferdsendring, søksarbeid og individuell
-                veiledning, med hundens velferd og eiers mestring i sentrum.
+                Lena hjelper med søksarbeid, privattimer og utfordringer i
+                hverdagen, med hundens trygghet i sentrum.
               </p>
               <ul class="contact-list">
                 <li><a href="tel:+4797790179">977 90 179</a></li>
@@ -267,6 +301,145 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      const slides = [...document.querySelectorAll("[data-hero-slide]")];
+      const slideButtons = [...document.querySelectorAll("[data-slide-index]")];
+      const pauseButton = document.querySelector(".hero-pause");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let activeSlide = 0;
+      let slideTimer;
+      let slideshowPaused = reducedMotion.matches;
+
+      function showSlide(index) {
+        activeSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === activeSlide);
+        });
+        slideButtons.forEach((button, buttonIndex) => {
+          const selected = buttonIndex === activeSlide;
+          button.classList.toggle("is-active", selected);
+          button.setAttribute("aria-pressed", String(selected));
+        });
+      }
+
+      function stopSlideshow() {
+        window.clearInterval(slideTimer);
+        slideTimer = undefined;
+      }
+
+      function startSlideshow() {
+        stopSlideshow();
+        if (!slideshowPaused) {
+          slideTimer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
+        }
+      }
+
+      function updatePauseButton() {
+        pauseButton.textContent = slideshowPaused
+          ? "Start bildevisning"
+          : "Pause bildevisning";
+        pauseButton.setAttribute("aria-pressed", String(slideshowPaused));
+      }
+
+      slideButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          showSlide(Number(button.dataset.slideIndex));
+          startSlideshow();
+        });
+      });
+
+      pauseButton.addEventListener("click", () => {
+        slideshowPaused = !slideshowPaused;
+        updatePauseButton();
+        startSlideshow();
+      });
+
+      updatePauseButton();
+      startSlideshow();
+
+      const courseFeedUrl =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSybrSF1SWVz_UgzgJ0Y8KK1iQMY4RfnXGFcyt_o1KdziV27Aj5vkAengHizoU0D4A9dqmuW2HN7D29/pub?gid=172904867&single=true&output=csv";
+      const courseList = document.getElementById("live-course-list");
+      const courseFeedStatus = document.getElementById("course-feed-status");
+
+      function parseCsv(text) {
+        const rows = [];
+        let row = [];
+        let value = "";
+        let quoted = false;
+
+        for (let index = 0; index < text.length; index += 1) {
+          const character = text[index];
+          const nextCharacter = text[index + 1];
+
+          if (character === '"' && quoted && nextCharacter === '"') {
+            value += '"';
+            index += 1;
+          } else if (character === '"') {
+            quoted = !quoted;
+          } else if (character === "," && !quoted) {
+            row.push(value.trim());
+            value = "";
+          } else if ((character === "\n" || character === "\r") && !quoted) {
+            if (character === "\r" && nextCharacter === "\n") {
+              index += 1;
+            }
+            row.push(value.trim());
+            if (row.some(Boolean)) rows.push(row);
+            row = [];
+            value = "";
+          } else {
+            value += character;
+          }
+        }
+
+        row.push(value.trim());
+        if (row.some(Boolean)) rows.push(row);
+        return rows;
+      }
+
+      function validCourseUrl(value) {
+        try {
+          const url = new URL(value);
+          return url.protocol === "https:" && url.hostname === "canishundeskole.no";
+        } catch {
+          return false;
+        }
+      }
+
+      fetch(courseFeedUrl, { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) throw new Error("Kurslisten kunne ikke hentes.");
+          return response.text();
+        })
+        .then((csv) => {
+          const courses = parseCsv(csv)
+            .slice(1)
+            .filter(([name, url]) => name && validCourseUrl(url));
+
+          if (!courses.length) throw new Error("Kurslisten er tom.");
+
+          courseList.replaceChildren(
+            ...courses.map(([name, url]) => {
+              const item = document.createElement("li");
+              const link = document.createElement("a");
+              const arrow = document.createElement("span");
+              link.href = url;
+              link.target = "_blank";
+              link.rel = "noreferrer";
+              link.append(document.createTextNode(`${name} `));
+              arrow.setAttribute("aria-hidden", "true");
+              arrow.textContent = "↗";
+              link.append(arrow);
+              item.append(link);
+              return item;
+            }),
+          );
+        })
+        .catch(() => {
+          courseFeedStatus.textContent =
+            "Den automatiske listen er midlertidig utilgjengelig. Bruk lenken til kursoversikten.";
+        });
     </script>
   </body>
 </html>
