@@ -127,6 +127,7 @@ nav a:focus-visible {
   align-items: end;
 }
 
+.hero-images,
 .hero-image,
 .hero-shade {
   position: absolute;
@@ -134,10 +135,29 @@ nav a:focus-visible {
 }
 
 .hero-image {
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 1.2s ease;
+}
+
+.hero-image.is-active {
+  opacity: 1;
+}
+
+.hero-image-one {
   background-image: url("assets/hero-dog.jpg");
   background-position: 64% 46%;
-  background-size: cover;
-  transform: scale(1.01);
+}
+
+.hero-image-two {
+  background-image: url("assets/hero-search-boxes.jpg");
+  background-position: 67% center;
+}
+
+.hero-image-three {
+  background-image: url("assets/hero-sniffing.jpg");
+  background-position: 68% center;
 }
 
 .hero-shade {
@@ -224,6 +244,44 @@ nav a:focus-visible {
   color: var(--white);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+
+.hero-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hero-dot.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.hero-pause {
+  padding: 0.25rem 0.35rem;
+  color: rgba(255, 255, 255, 0.82);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.hero-pause:hover,
+.hero-pause:focus-visible {
+  color: var(--white);
 }
 
 .hero-facts {
@@ -395,6 +453,44 @@ nav a:focus-visible {
 .course-link-panel h3 {
   margin: 0;
   font-size: clamp(1.4rem, 2.8vw, 2rem);
+}
+
+.course-link-note {
+  margin: 0.45rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.live-course-panel {
+  align-items: flex-start;
+}
+
+.live-course-list {
+  width: min(100%, 32rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.live-course-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.live-course-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.live-course-list a:hover,
+.live-course-list a:focus-visible {
+  color: var(--blue);
 }
 
 .button-dark {
@@ -705,11 +801,16 @@ nav a:focus-visible {
   }
 
   .hero {
-    min-height: 44rem;
+    min-height: 47rem;
   }
 
-  .hero-image {
+  .hero-image-one {
     background-position: 68% center;
+  }
+
+  .hero-image-two,
+  .hero-image-three {
+    background-position: 65% center;
   }
 
   .hero-shade {
@@ -749,7 +850,8 @@ nav a:focus-visible {
     flex-direction: column;
   }
 
-  .course-link-panel .button {
+  .course-link-panel .button,
+  .live-course-list {
     width: 100%;
   }
 
@@ -787,6 +889,10 @@ nav a:focus-visible {
   }
 
   .button {
+    transition: none;
+  }
+
+  .hero-image {
     transition: none;
   }
 }
