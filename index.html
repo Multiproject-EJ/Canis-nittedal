@@ -34,12 +34,7 @@
           <a href="#instruktorer">Instruktører</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
-        <a
-          class="header-cta"
-          href="https://canishundeskole.no/kurs?avdeling=Nittedal"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a class="header-cta" href="#kurs">
           Se aktuelle kurs
           <span aria-hidden="true">↗</span>
         </a>
@@ -63,12 +58,7 @@
             støtte hele veien.
           </p>
           <div class="button-row">
-            <a
-              class="button button-primary"
-              href="https://canishundeskole.no/kurs?avdeling=Nittedal"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a class="button button-primary" href="#kurs">
               Kurs og påmelding
               <span aria-hidden="true">↗</span>
             </a>
@@ -118,45 +108,6 @@
             Enten dere trenger en god start, mer ro i hverdagen eller nye
             utfordringer, finner vi et opplegg som passer.
           </p>
-        </div>
-
-        <div class="course-grid">
-          <article class="course-card course-card-photo puppies-card">
-            <div class="course-card-shade"></div>
-            <div class="course-card-content">
-              <p class="card-number">01</p>
-              <h3>Valp og hverdag</h3>
-              <p>Valpekurs, hverdagslydighet, grunnferdigheter og båndtrening.</p>
-            </div>
-          </article>
-
-          <article class="course-card course-card-photo search-card">
-            <div class="course-card-shade"></div>
-            <div class="course-card-content">
-              <p class="card-number">02</p>
-              <h3>Søk og aktivitet</h3>
-              <p>Nosework, spesialsøk, spor, rundering og kantarellsøk.</p>
-            </div>
-          </article>
-
-          <article class="course-card course-card-photo activity-card">
-            <div class="course-card-shade"></div>
-            <div class="course-card-content">
-              <p class="card-number">03</p>
-              <h3>For viderekomne</h3>
-              <p>Rallylydighet, brukslydighet, konkurranselydighet og klikkertrening.</p>
-            </div>
-          </article>
-
-          <article class="course-card course-card-solid">
-            <p class="card-number">04</p>
-            <h3>Individuell veiledning</h3>
-            <p>
-              Privattimer og hjelp med utfordringer i hverdagen, tilpasset deg
-              og hunden din.
-            </p>
-            <a href="#kontakt">Ta kontakt <span aria-hidden="true">→</span></a>
-          </article>
         </div>
 
         <div class="course-link-panel live-course-panel">
@@ -407,39 +358,46 @@
         }
       }
 
-      fetch(courseFeedUrl, { cache: "no-store" })
-        .then((response) => {
-          if (!response.ok) throw new Error("Kurslisten kunne ikke hentes.");
-          return response.text();
-        })
-        .then((csv) => {
-          const courses = parseCsv(csv)
-            .slice(1)
-            .filter(([name, url]) => name && validCourseUrl(url));
+      function loadCourses() {
+        fetch(courseFeedUrl, { cache: "no-store" })
+          .then((response) => {
+            if (!response.ok) throw new Error("Kurslisten kunne ikke hentes.");
+            return response.text();
+          })
+          .then((csv) => {
+            const courses = parseCsv(csv)
+              .slice(1)
+              .filter(([name, url]) => name && validCourseUrl(url));
 
-          if (!courses.length) throw new Error("Kurslisten er tom.");
+            if (!courses.length) throw new Error("Kurslisten er tom.");
 
-          courseList.replaceChildren(
-            ...courses.map(([name, url]) => {
-              const item = document.createElement("li");
-              const link = document.createElement("a");
-              const arrow = document.createElement("span");
-              link.href = url;
-              link.target = "_blank";
-              link.rel = "noreferrer";
-              link.append(document.createTextNode(`${name} `));
-              arrow.setAttribute("aria-hidden", "true");
-              arrow.textContent = "↗";
-              link.append(arrow);
-              item.append(link);
-              return item;
-            }),
-          );
-        })
-        .catch(() => {
-          courseFeedStatus.textContent =
-            "Den automatiske listen er midlertidig utilgjengelig. Bruk lenken til kursoversikten.";
-        });
+            courseList.replaceChildren(
+              ...courses.map(([name, url]) => {
+                const item = document.createElement("li");
+                const link = document.createElement("a");
+                const arrow = document.createElement("span");
+                link.href = url;
+                link.target = "_blank";
+                link.rel = "noreferrer";
+                link.append(document.createTextNode(`${name} `));
+                arrow.setAttribute("aria-hidden", "true");
+                arrow.textContent = "↗";
+                link.append(arrow);
+                item.append(link);
+                return item;
+              }),
+            );
+            courseFeedStatus.textContent =
+              "Oppdateres automatisk fra kurslisten.";
+          })
+          .catch(() => {
+            courseFeedStatus.textContent =
+              "Den automatiske listen er midlertidig utilgjengelig. Bruk lenken til kursoversikten.";
+          });
+      }
+
+      loadCourses();
+      window.setInterval(loadCourses, 5 * 60 * 1000);
     </script>
   </body>
 </html>
