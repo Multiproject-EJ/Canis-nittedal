@@ -493,6 +493,22 @@ nav a:focus-visible {
   color: var(--blue);
 }
 
+.live-course-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.live-course-date {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.live-course-list a:hover .live-course-date,
+.live-course-list a:focus-visible .live-course-date {
+  color: var(--blue);
+}
+
 .button-dark {
   color: var(--white);
   background: var(--ink);
